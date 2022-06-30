@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private var firstTurn = Turn.CROSS
     private var currentTurn = Turn.CROSS
 
+
     private var crossesScore = 0
     private var noughtsScore = 0
 
@@ -75,22 +76,52 @@ class MainActivity : AppCompatActivity() {
         mboardList.add(binding.d3)
         mboardList.add(binding.d4)
 
+        iboardList.add(binding.k9)
+        iboardList.add(binding.ai1)
+        iboardList.add(binding.ai2)
+        iboardList.add(binding.ai3)
+        iboardList.add(binding.ai4)
+
+        iboardList.add(binding.bi0)
+        iboardList.add(binding.bi1)
+        iboardList.add(binding.bi2)
+        iboardList.add(binding.bi3)
+        iboardList.add(binding.bi4)
+
+        iboardList.add(binding.ci0)
+        iboardList.add(binding.ci1)
+        iboardList.add(binding.ci2)
+        iboardList.add(binding.ci3)
+        iboardList.add(binding.ci4)
+
+        iboardList.add(binding.di0)
+        iboardList.add(binding.di1)
+        iboardList.add(binding.di2)
+        iboardList.add(binding.di3)
+        iboardList.add(binding.di4)
+
+        test()
 
     }
 
     // See styles.xml
     fun boardTapped(view: View) {
+
         if (view !is Button)
             return
 
         if (boardList.indexOf(view) == 0) {
             addToBoard(view)
+            test()
         } else if (boardList.indexOf(view) == 5) {
             addToBoard(view)
+            test()
         } else if (boardList.indexOf(view) == 10) {
             addToBoard(view)
+            test()
         } else if (boardList.indexOf(view) == 15) {
             addToBoard(view)
+            test()
         }
 
 
@@ -105,6 +136,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 
     private fun checkForVictory(s: String): Boolean {
         //Vertical Victory
@@ -198,8 +230,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun resetBoard() {
         for (button in boardList) {
-            button.text = ""
+            if (button.text != "Click here"){
+                button.text = ""
+            }
 
+        }
+        for (button in iboardList){
+            button.setBackgroundResource(R.drawable.ic_baseline_brightness_1_23)
         }
 
         if (firstTurn == Turn.NOUGHT)
@@ -209,6 +246,7 @@ class MainActivity : AppCompatActivity() {
 
         currentTurn = firstTurn
         setTurnLabel()
+        test()
     }
 
     private fun fullBoard(): Boolean {
@@ -228,18 +266,20 @@ class MainActivity : AppCompatActivity() {
 
         checkloop@ for (i in 0..3) {
             var button2 = boardList[index - i]
-            if (button2.text == "") {
+            var button3 = iboardList[index-i]
+            if(button2.text == ""){
                 if (currentTurn == Turn.NOUGHT) {
                     button2.setTextColor(Color.RED)
+                    button3.setBackgroundResource(R.drawable.ic_baseline_brightness_1_24)
                     button2.text = NOUGHT
-
                     currentTurn = Turn.CROSS
-                } else if (currentTurn == Turn.CROSS) {
+                }
+                else if (currentTurn == Turn.CROSS) {
                     button2.setTextColor(Color.YELLOW)
+                    button3.setBackgroundResource(R.drawable.ic_baseline_brightness_1_25)
                     button2.text = CROSS
 
                     currentTurn = Turn.NOUGHT
-
                 }
                 break@checkloop
             }
@@ -268,5 +308,12 @@ class MainActivity : AppCompatActivity() {
         this@MainActivity.finish()
     }
 
+    private fun test(){
+        val button = iboardList[0]
+        if (currentTurn == Turn.NOUGHT){
+            button.setBackgroundResource(R.drawable.ic_baseline_brightness_1_24)}
+        if (currentTurn == Turn.CROSS){
+            button.setBackgroundResource(R.drawable.ic_baseline_brightness_1_25)}
+    }
 
 }

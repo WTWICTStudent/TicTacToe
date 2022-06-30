@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FDFCFC"
+    android:backgroundTint="#FFFFFF"
     tools:context=".MainActivity">
 
     <TextView
@@ -18,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/Layout_Symbols"
         android:layout_width="match_parent"
         android:layout_height="411dp"
         android:orientation="vertical"
@@ -26,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/DropButtons"
         tools:visibility="visible">
 
 
@@ -40,7 +42,7 @@
                 android:backgroundTint="#FFFFFF" />
 
             <View
-                android:id="@+id/view16"
+                android:id="@+id/view2"
                 style="@style/verticalLine"
                 android:background="#B668D3" />
 
@@ -50,7 +52,7 @@
                 android:backgroundTint="#00FFFFFF" />
 
             <View
-                android:id="@+id/view17"
+                android:id="@+id/view3"
                 style="@style/verticalLine"
                 android:background="#B668D3" />
 
@@ -60,7 +62,7 @@
                 android:backgroundTint="#FFFFFF" />
 
             <View
-                android:id="@+id/view18"
+                android:id="@+id/view4"
                 style="@style/verticalLine"
                 android:background="#B668D3" />
 
@@ -102,7 +104,7 @@
                 android:backgroundTint="#FFFFFF" />
 
             <View
-                android:id="@+id/View"
+                android:id="@+id/view11"
                 style="@style/verticalLine"
                 android:background="#B668D3" />
 
@@ -143,7 +145,7 @@
                 android:backgroundTint="#FFFFFF" />
 
             <View
-                android:id="@+id/view6"
+                android:id="@+id/view10"
                 style="@style/verticalLine"
                 android:background="#B668D3" />
 
@@ -184,7 +186,7 @@
                 android:backgroundTint="#FFFFFF" />
 
             <View
-                android:id="@+id/view"
+                android:id="@+id/view13"
                 style="@style/verticalLine"
                 android:background="#B668D3" />
 
@@ -199,7 +201,189 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/imagelayout"
+        android:layout_width="match_parent"
+        android:layout_height="411dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DropButtons"
+        tools:visibility="visible">
+
+
+        <LinearLayout
+            style="@style/row"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ai1"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+            <View
+                android:id="@+id/view16"
+                style="@style/verticalLine"
+                android:background="#B668D3"
+                android:theme="@style/Theme.TicTacToe" />
+
+            <ImageButton
+                android:id="@+id/bi1"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+            <View
+                android:id="@+id/view17"
+                style="@style/verticalLine"
+                android:background="#B668D3" />
+
+            <ImageButton
+                android:id="@+id/ci1"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+            <View
+                android:id="@+id/view18"
+                style="@style/verticalLine"
+                android:background="#B668D3" />
+
+            <ImageButton
+                android:id="@+id/di1"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view7"
+            style="@style/horizontalLine"
+            android:background="#B668D3" />
+
+        <LinearLayout style="@style/row">
+
+            <ImageButton
+                android:id="@+id/ai2"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+            <View
+                style="@style/verticalLine"
+                android:background="#B668D3" />
+
+            <ImageButton
+                android:id="@+id/bi2"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+            <View
+                style="@style/verticalLine"
+                android:background="#B668D3" />
+
+            <ImageButton
+                android:id="@+id/ci2"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+            <View
+                android:id="@+id/View"
+                style="@style/verticalLine"
+                android:background="#B668D3" />
+
+            <ImageButton
+                android:id="@+id/di2"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/horizontalLine"
+            android:background="#B668D3" />
+
+        <LinearLayout style="@style/row">
+
+            <ImageButton
+                android:id="@+id/ai3"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+            <View
+                style="@style/verticalLine"
+                android:background="#B668D3" />
+
+            <ImageButton
+                android:id="@+id/bi3"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+            <View
+                style="@style/verticalLine"
+                android:background="#B668D3" />
+
+            <ImageButton
+                android:id="@+id/ci3"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+            <View
+                android:id="@+id/view6"
+                style="@style/verticalLine"
+                android:background="#B668D3" />
+
+            <ImageButton
+                android:id="@+id/di3"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/horizontalLine"
+            android:background="#B668D3" />
+
+        <LinearLayout style="@style/row">
+
+            <ImageButton
+                android:id="@+id/ai4"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+            <View
+                style="@style/verticalLine"
+                android:background="#B668D3" />
+
+            <ImageButton
+                android:id="@+id/bi4"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+            <View
+                style="@style/verticalLine"
+                android:background="#B668D3" />
+
+            <ImageButton
+                android:id="@+id/ci4"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+            <View
+                android:id="@+id/view"
+                style="@style/verticalLine"
+                android:background="#B668D3" />
+
+            <ImageButton
+                android:id="@+id/di4"
+                style="@style/column"
+                app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/DropButtons"
         android:layout_width="373dp"
         android:layout_height="81dp"
         android:layout_marginTop="64dp"
@@ -262,5 +446,42 @@
             android:background="#B668D3" />
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/k9"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintStart_toStartOf="@+id/turnTV"
+        app:srcCompat="@drawable/ic_baseline_brightness_1_23"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageButton
+        android:id="@+id/bi0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/di0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+    <ImageButton
+        android:id="@+id/ci0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/bi0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
+
+    <ImageButton
+        android:id="@+id/di0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_brightness_1_23" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
