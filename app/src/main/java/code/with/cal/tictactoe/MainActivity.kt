@@ -127,10 +127,10 @@ class MainActivity : AppCompatActivity() {
 
         if (checkForVictory(NOUGHT)) {
             noughtsScore++
-            result("Noughts Win!")
+            result("Red Wins!")
         } else if (checkForVictory(CROSS)) {
             crossesScore++
-            result("Crosses Win!") // Bad: "Noughts Win!", Good: "Crosses Win!"
+            result("Yellow Wins!") // Bad: "Noughts Win!", Good: "Crosses Win!"
         } else if (fullBoard()) {
             result("Draw")
         }
@@ -211,7 +211,7 @@ class MainActivity : AppCompatActivity() {
     private fun match(button: Button, symbol: String): Boolean = button.text == symbol
 
     private fun result(title: String) {
-        val message = "\nNoughts $noughtsScore\n\nCrosses $crossesScore"
+        val message = "\nRed $noughtsScore\n\nYellow $crossesScore"
         val builder = AlertDialog.Builder(this)
         builder.setTitle(title)
         builder.setMessage(message)
@@ -265,8 +265,8 @@ class MainActivity : AppCompatActivity() {
         val index = boardList.indexOf(button) + 4
 
         checkloop@ for (i in 0..3) {
-            var button2 = boardList[index - i]
-            var button3 = iboardList[index-i]
+            val button2 = boardList[index - i]
+            val button3 = iboardList[index-i]
             if(button2.text == ""){
                 if (currentTurn == Turn.NOUGHT) {
                     button2.setTextColor(Color.RED)
