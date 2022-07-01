@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import code.with.cal.tictactoe.databinding.ActivityMainBinding
 
@@ -101,12 +102,13 @@ class MainActivity : AppCompatActivity() {
         iboardList.add(binding.di4)
 
         test()
-
+        var score = ""
+        score = "Yellow: $crossesScore  Red: $noughtsScore "
+        binding.score.text = score
     }
 
     // See styles.xml
     fun boardTapped(view: View) {
-
         if (view !is Button)
             return
 
@@ -124,7 +126,6 @@ class MainActivity : AppCompatActivity() {
             test()
         }
 
-
         if (checkForVictory(NOUGHT)) {
             noughtsScore++
             result("Red Wins!")
@@ -134,7 +135,9 @@ class MainActivity : AppCompatActivity() {
         } else if (fullBoard()) {
             result("Draw")
         }
-
+        var score = ""
+        score = "Yellow: $crossesScore  Red: $noughtsScore "
+        binding.score.text = score
     }
 
 
@@ -226,16 +229,20 @@ class MainActivity : AppCompatActivity() {
         }
         builder.setCancelable(false)
         builder.show()
+
+
+
+
     }
 
     private fun resetBoard() {
         for (button in boardList) {
-            if (button.text != "Click here"){
+            if (button.text != "Click here") {
                 button.text = ""
             }
 
         }
-        for (button in iboardList){
+        for (button in iboardList) {
             button.setBackgroundResource(R.drawable.ic_baseline_brightness_1_23)
         }
 
@@ -266,15 +273,14 @@ class MainActivity : AppCompatActivity() {
 
         checkloop@ for (i in 0..3) {
             val button2 = boardList[index - i]
-            val button3 = iboardList[index-i]
-            if(button2.text == ""){
+            val button3 = iboardList[index - i]
+            if (button2.text == "") {
                 if (currentTurn == Turn.NOUGHT) {
                     button2.setTextColor(Color.RED)
                     button3.setBackgroundResource(R.drawable.ic_baseline_brightness_1_24)
                     button2.text = NOUGHT
                     currentTurn = Turn.CROSS
-                }
-                else if (currentTurn == Turn.CROSS) {
+                } else if (currentTurn == Turn.CROSS) {
                     button2.setTextColor(Color.YELLOW)
                     button3.setBackgroundResource(R.drawable.ic_baseline_brightness_1_25)
                     button2.text = CROSS
@@ -285,9 +291,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         setTurnLabel()
-
     }
-
 
     private fun setTurnLabel() {
         var turnText = ""
@@ -298,7 +302,6 @@ class MainActivity : AppCompatActivity() {
         binding.turnTV.text = turnText
     }
 
-
     companion object {
         const val NOUGHT = "O"
         const val CROSS = "X"
@@ -308,12 +311,13 @@ class MainActivity : AppCompatActivity() {
         this@MainActivity.finish()
     }
 
-    private fun test(){
+    private fun test() {
         val button = iboardList[0]
-        if (currentTurn == Turn.NOUGHT){
-            button.setBackgroundResource(R.drawable.ic_baseline_brightness_1_24)}
-        if (currentTurn == Turn.CROSS){
-            button.setBackgroundResource(R.drawable.ic_baseline_brightness_1_25)}
+        if (currentTurn == Turn.NOUGHT) {
+            button.setBackgroundResource(R.drawable.ic_baseline_brightness_1_24)
+        }
+        if (currentTurn == Turn.CROSS) {
+            button.setBackgroundResource(R.drawable.ic_baseline_brightness_1_25)
+        }
     }
-
 }
